@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-container {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template: auto auto 60px / 1fr;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.page-header h1 {
+    flex-grow: 1;
+
+    padding: 15px;
+}
+
+.page-header nav {
+    flex-grow: 6;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.page-header nav a {
+    flex-grow: 1;
+
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.page-header nav .current-page {
+    text-decoration: underline;
+}
+
+main {
+    padding: 15px;
+}
+
+.gallery-nav {
+    display: grid;
+    grid-template:repeat(5, auto), 1fr;
+    
+    grid-gap: 10px;
+}
+
+.gallery-nav div {
+    background-color: cornflowerblue;
+    padding: 10px;
+    color: white;
+}
+
+.gallery-nav div img {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.gallery-nav div a {
+    color: white;
+}
+
+figcaption {
+    font-style: italic;
+}
+
+iframe {
+    min-width: 100%;
+    min-height: 250px;
+}
+
+form {
+    background-color: cornflowerblue;
+    color: white;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+form div {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+form input, form textarea {
+    border: 0;
+}
+
+form textarea {
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    background-color: cornflowerblue;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .page-container {
+        grid-template: 120px auto 60px / auto 800px auto;
+    }
+
+    header {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    main {
+        grid-column: 2 / -2;
+        grid-row: 2 / -2;
+    }
+
+    footer {
+        grid-column: 1 / -1;
+        grid-row: -2 / -1;
+    }
+    
+    .page-header nav {
+        flex-direction: row;
+    }
+
+    .gallery-nav {
+        display: grid;
+        grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+
+    .gallery-nav div {
+        grid-column: span 2;
+    }
+
+    .gallery-nav div:last-child {
+        grid-column: 2 / span 2;
+    }
+
+    iframe {
+        min-width: 100%;
+        min-height: 450px;
+    }
+}
